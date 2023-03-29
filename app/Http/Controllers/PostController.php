@@ -43,7 +43,7 @@ class PostController extends Controller
     
         Post::create([
             'title' => $request->title,
-            'slug' => \Str::slug($request->slug),
+            'slug' => Str::slug($request->slug),
             'content' => $request->content,
         ]);
 
@@ -78,7 +78,7 @@ class PostController extends Controller
         ]);
         
         $post->title = $request->title;
-        $post->slug = \Str::slug($request->slug);
+        $post->slug = Str::slug($request->slug);
         $post->content = $request->content;
         $post->save();
 
